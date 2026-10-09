@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دیگه بخوابیم</title>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--a:#3a4f9c;--c:#1b2547;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;color:var(--c);font-family:Tahoma,"Vazirmatn",sans-serif;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 90% 20%,#ffffff88,transparent 50%),linear-gradient(#c3cee3,#a3b2cf 55%,#8797ba);background-attachment:fixed}
+.moon{position:fixed;z-index:-3;top:-17vmax;left:-20vmax;width:78vmax;height:78vmax;border-radius:50%;
+background:radial-gradient(circle at 22% 25%,#8e9bb855 0 5%,transparent 5.6%),radial-gradient(circle at 55% 18%,#8e9bb844 0 8%,transparent 8.6%),radial-gradient(circle at 70% 50%,#8e9bb844 0 11%,transparent 11.6%),radial-gradient(circle at 35% 62%,#8e9bb844 0 9%,transparent 9.6%),radial-gradient(circle at 18% 80%,#8e9bb855 0 4%,transparent 4.6%),radial-gradient(circle at 62% 86%,#8e9bb844 0 6%,transparent 6.6%),radial-gradient(circle at 40% 40%,#ffffff,#eef2fa 50%,#c4cde0);
+box-shadow:0 0 0 3px #ffffff88,0 0 100px 30px #ffffffaa,0 30px 80px #4a5a8a44;opacity:.95;animation:f 18s ease-in-out infinite alternate}
+@keyframes f{to{transform:translate(20px,26px) rotate(6deg)}}
+.stars{position:fixed;inset:0;z-index:-2;background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(1.5px 1.5px at 90px 120px,#ffffffcc,transparent),radial-gradient(2.5px 2.5px at 160px 60px,#fff,transparent);background-size:200px 160px;animation:t 3.5s infinite alternate}
+@keyframes t{to{opacity:.35}}
+.hills{position:fixed;left:-10%;right:-10%;bottom:-6vh;height:28vh;z-index:-1;background:radial-gradient(60% 100% at 25% 100%,#6f81aa99 98%,transparent 100%),radial-gradient(60% 85% at 80% 100%,#5a6c9bb3 98%,transparent 100%)}
+.cl{position:fixed;z-index:-1;height:34px;width:150px;border-radius:40px;background:#ffffff77;filter:blur(7px);animation:dr 50s linear infinite}
+@keyframes dr{from{transform:translateX(-200px)}to{transform:translateX(120vw)}}
+.ff{position:fixed;z-index:-1;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 12px 4px #9fc3ff;animation:ff 9s ease-in-out infinite alternate}
+@keyframes ff{50%{transform:translate(30px,-40px);opacity:.4}to{transform:translate(-20px,-80px)}}
+.sh{position:fixed;z-index:-1;top:12%;right:-10%;width:90px;height:2px;background:linear-gradient(90deg,#fff,transparent);transform:rotate(-30deg);animation:sh 9s linear infinite;opacity:0}
+@keyframes sh{0%{opacity:1;transform:translate(0,0) rotate(-30deg)}12%{opacity:0;transform:translate(-110vw,60vh) rotate(-30deg)}100%{opacity:0}}
+main{max-width:480px;margin:auto;padding:14px}
+header{display:flex;align-items:center;gap:12px}
+h1{font-family:Lalezar,Tahoma;font-weight:400;font-size:34px;margin:0;background:linear-gradient(90deg,#1b2547,#4a63c8,#7b5cd6);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 #ffffffaa)}
+.card{position:relative;background:linear-gradient(160deg,#ffffff8c,#ffffff40);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid #ffffffcc;border-radius:28px;padding:20px 18px;margin:18px 0;box-shadow:0 14px 36px #34446f40,inset 0 1px 0 #fff}
+.card:before{content:"✦";position:absolute;top:10px;left:16px;color:#7f90bb;font-size:14px}
+h2{font-family:Lalezar,Tahoma;font-weight:400;margin:0 0 14px;font-size:21px;color:var(--a)}
+.btn{font:inherit;font-weight:700;color:#fff;border:0;border-radius:18px;padding:13px 20px;cursor:pointer;background:linear-gradient(180deg,#8aa6f2,#4560c9);box-shadow:0 6px 16px #3a50a455,inset 0 2px 0 #ffffff88,inset 0 -3px 0 #2a3e9a66;transition:.15s}
+.btn:active{transform:translateY(2px) scale(.98)}
+.btn.v{color:#1b2547;background:linear-gradient(180deg,#ffffff,#cfd9ec);box-shadow:0 6px 16px #34446f33,inset 0 2px 0 #fff,inset 0 -3px 0 #9fb0d066}
+.btn.g{color:var(--c);background:#ffffff55;box-shadow:inset 0 0 0 1px #ffffffcc}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:1}
+select{width:100%;font:inherit;padding:11px;border-radius:14px;background:#ffffffa0;color:var(--c);border:1px solid #fff}option{color:#000}
+input[type=range]{width:100%;accent-color:#4560c9}
+.meter{height:10px;border-radius:8px;background:#ffffff80;overflow:hidden;box-shadow:inset 0 1px 3px #34446f44}.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7ab3ff,#8a6cf0,#ff8fa3)}
+#st{font-size:13px;margin:10px 0;line-height:1.9;opacity:.9}
+.clock{position:relative;width:236px;margin:6px auto 16px;text-align:center}
+.clock svg{display:block;filter:drop-shadow(0 10px 18px #34446f55)}
+.dig{font-family:Orbitron,"Courier New",monospace;font-size:38px;letter-spacing:3px;direction:ltr;margin-top:10px;padding:6px 16px;display:inline-block;border-radius:16px;background:linear-gradient(180deg,#ffffffcc,#ffffff66);color:#2b3f95;box-shadow:inset 0 2px 6px #34446f33,0 0 0 1px #fff}
+.wheels{display:flex;justify-content:center;gap:8px;direction:ltr;align-items:center;font-size:24px;position:relative}
+.wheel{height:132px;width:84px;overflow-y:scroll;scroll-snap-type:y mandatory;border-radius:18px;background:#ffffff80;scrollbar-width:none;text-align:center;font-family:Orbitron,Georgia,serif;mask-image:linear-gradient(transparent,#000 30%,#000 70%,transparent)}.wheel::-webkit-scrollbar{display:none}
+.wheel div{height:44px;line-height:44px;scroll-snap-align:center}.wheel:before,.wheel:after{content:"";display:block;height:44px}
+.hl{position:absolute;left:50%;transform:translateX(-50%);top:44px;height:44px;width:200px;border-block:2px solid #4560c9aa;border-radius:12px;pointer-events:none}
+.days{display:flex;gap:6px;justify-content:center;margin-top:12px}.days span{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#ffffff88;cursor:pointer;font-size:14px;box-shadow:inset 0 0 0 1px #fff}.days span.on{background:linear-gradient(180deg,#8aa6f2,#4560c9);color:#fff;font-weight:700;box-shadow:0 4px 12px #3a50a466}
+.tog{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.sw{width:54px;height:30px;border-radius:99px;background:#ffffff99;position:relative;cursor:pointer;flex:none;box-shadow:inset 0 1px 4px #34446f44}.sw:after{content:"";position:absolute;top:3px;right:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 5px #34446f55;transition:.2s}.sw.on{background:#4560c9}.sw.on:after{right:27px}
+#rem{text-align:center;margin-top:14px;padding:12px;border-radius:18px;background:#ffffff80;border:1px dashed #4560c9aa;font-size:15px;line-height:1.9;display:none}
+footer{text-align:center;margin:20px 0 40px}footer a{direction:ltr;display:inline-block;padding:8px 18px;border-radius:99px;background:#ffffff88;color:#1b2547;cursor:pointer;font-size:14px;letter-spacing:1px;box-shadow:inset 0 0 0 1px #fff}
+.ov{display:none;position:fixed;inset:0;background:#dfe6f4f2;color:#1b2547;z-index:9;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:10px}
+body.day{background:radial-gradient(ellipse at 90% 20%,#fff1c2aa,transparent 50%),linear-gradient(#ddd5d8,#c0bad0 55%,#9da2c8);background-attachment:fixed}
+body.day .moon{background:radial-gradient(circle at 40% 40%,#fffbe0,#ffe08a 45%,#ffb84d);box-shadow:0 0 0 3px #fff9,0 0 120px 50px #ffd36ecc}
+</style></head><body>
+<div class="stars"></div><div class="moon"></div><div class="hills"></div><div class="sh"></div>
+<div class="cl" style="top:22%"></div><div class="cl" style="top:55%;animation-delay:-25s;width:200px"></div>
+<main>
+<header><div id="logo" style="width:62px;height:62px"></div><h1>دیگه بخوابیم</h1></header>
+
+<section class="card">
+<h2>🎙️ پایش خروپف</h2>
+<div class="row"><button class="btn" id="go">▶ شروع</button><button class="btn g" id="stop">■ پایان</button></div>
+<div class="row" style="margin-top:10px"><button class="btn v" id="mic">🎙️ فعال‌سازی میکروفون</button></div>
+<div id="st">غیرفعال — میکروفون فقط سطح صدا را می‌سنجد و چیزی ضبط نمی‌شود.</div>
+<div class="meter"><i id="lv"></i></div>
+<div style="margin-top:14px;font-size:14px">حساسیت<input type="range" id="sens" min="1" max="10" value="5"></div>
+<div class="row" style="margin-top:12px;font-size:14px"><label>حالت پایش<select id="pm"><option value="cont">دائم (باتری بیشتر)</option><option value="m30">هر ۳۰ ثانیه یک‌بار</option><option value="m1" selected>هر ۱ دقیقه یک‌بار</option><option value="m2">هر ۲ دقیقه یک‌بار</option></select></label></div>
+<div class="tog" id="dimrow"><span style="font-size:14px">کم‌نور شدن صفحه هنگام پایش</span><div class="sw on" id="dimsw"></div></div>
+<div class="row" style="margin-top:12px;font-size:14px">
+<label>نوع ویبره<select id="vt"><option value="heart">قلب تپنده ❤️</option><option value="soft">ملایم</option><option value="wave">موجی</option><option value="strong">قوی</option></select></label>
+<label>مدت<select id="vd"><option value="15">۱۵ ثانیه</option><option value="30" selected>۳۰ ثانیه</option><option value="60">۱ دقیقه</option></select></label></div>
+<div class="row" style="margin-top:12px"><button class="btn v" id="tv">تست ویبره</button><button class="btn v" id="sim">شبیه‌سازی خروپف</button></div>
+<div class="row" style="margin-top:10px"><button class="btn g" id="vset">⚙ تنظیمات ویبره گوشی</button></div>
+<div style="font-size:12px;opacity:.8;margin-top:8px;line-height:1.8">اگر ویبره حس نشد: «تنظیمات ویبره گوشی» را بزنید، ویبره را روشن کنید و حالت بی‌صدا یا «مزاحم نشوید» را بررسی کنید.</div>
+</section>
+
+<section class="card">
+<h2>⏰ زنگ بیدارباش</h2>
+<div class="clock"><svg viewBox="0 0 200 200" width="236" height="236"><defs><linearGradient id="rim" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#8fa2d0"/></linearGradient></defs><circle cx="100" cy="100" r="97" fill="#ffffff99" stroke="url(#rim)" stroke-width="4"/><circle cx="100" cy="100" r="88" fill="#ffffff55" stroke="#8a9bc4" stroke-width=".8"/><circle cx="100" cy="100" r="74" fill="none" stroke="#b6c3e4" stroke-width=".8" stroke-dasharray="2 5"/><g id="tk"></g><g id="cel" transform="translate(100 140)"></g><g id="hh"><path d="M100 108C84 100 86 84 96 76C90 70 94 62 100 52C106 62 110 70 104 76C114 84 116 100 100 108Z" fill="#ffffff66" stroke="#1b2547" stroke-width="2"/><circle cx="100" cy="94" r="5" fill="#2fc4b2" stroke="#1b2547" stroke-width="1"/><circle cx="100" cy="80" r="2.6" fill="#2fc4b2" stroke="#1b2547" stroke-width=".8"/><circle cx="100" cy="68" r="1.6" fill="#2fc4b2"/><path d="M92 92C86 90 86 84 90 83M108 92C114 90 114 84 110 83" fill="none" stroke="#1b2547" stroke-width="1.2" stroke-linecap="round"/><circle cx="100" cy="51" r="2.6" fill="#ffb84d" stroke="#1b2547" stroke-width=".8"/></g><g id="mh"><path d="M100 114C86 106 88 92 98 86C92 74 96 52 100 22C104 52 108 74 102 86C112 92 114 106 100 114Z" fill="#ffffff66" stroke="#4560c9" stroke-width="2"/><circle cx="100" cy="101" r="5.5" fill="#2fc4b2" stroke="#4560c9" stroke-width="1"/><circle cx="100" cy="80" r="3" fill="#2fc4b2" stroke="#4560c9" stroke-width=".8"/><circle cx="100" cy="62" r="2.2" fill="#2fc4b2"/><circle cx="100" cy="46" r="1.6" fill="#2fc4b2"/><path d="M90 104C80 100 80 90 86 90M110 104C120 100 120 90 114 90" fill="none" stroke="#4560c9" stroke-width="1.2" stroke-linecap="round"/><circle cx="100" cy="21" r="3" fill="#ffb84d" stroke="#4560c9" stroke-width=".8"/></g><circle cx="100" cy="100" r="8" fill="#fff" stroke="#4560c9" stroke-width="3"/><circle cx="100" cy="100" r="2.5" fill="#4560c9"/></svg><div class="dig" id="big">07:00</div></div>
+<div class="wheels"><div class="wheel" id="wh"></div><b>:</b><div class="wheel" id="wm"></div><div class="hl"></div></div>
+<div class="tog"><span>تکرار</span><div class="sw" id="rep"></div></div>
+<div class="days" id="days"></div>
+<div class="row" style="margin-top:14px;font-size:14px"><label>آهنگ<select id="tune"></select></label></div>
+<div class="row" style="margin-top:12px"><button class="btn v" id="pre">پیش‌شنیدن</button><button class="btn v" id="add">＋ آهنگ</button></div>
+<input type="file" id="file" accept="audio/*" hidden>
+<div class="row" style="margin-top:14px"><button class="btn" id="alb" style="font-size:17px">✔ کوک و تایید</button></div>
+<div id="rem"></div>
+</section>
+
+<footer><a id="by">by hasan.d</a></footer>
+</main>
+
+<div id="ring" class="ov" style="font-size:30px">☀️ صبح بخیر!<button class="btn" id="dis" style="font-size:22px">خاموش کردن زنگ</button></div>
+<div id="game" class="ov"><div id="cnt" style="font-size:22px;color:#1b2547"></div><canvas id="cv" style="border-radius:20px;box-shadow:0 0 40px #6a5cff66"></canvas><button class="btn g" id="gc">بستن 🌙</button></div>
+
+<script>
+
+const $=id=>document.getElementById(id);
+const S=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},G=(k,d)=>{try{return localStorage.getItem(k)??d}catch(e){return d}};
+const fa=(n,l=2)=>n.toLocaleString('fa-IR',{minimumIntegerDigits:l,useGrouping:false});
+/* wheels */
+function mk(el,n,v){el.n=n;for(let c=0;c<9;c++)for(let i=0;i<n;i++){const d=document.createElement('div');d.textContent=String(i).padStart(2,'0');el.appendChild(d)}el.scrollTop=(4*n+v)*44}
+const wh=$('wh'),wm=$('wm'),val=e=>Math.round(e.scrollTop/44)%e.n;
+mk(wh,24,+G('h',7));mk(wm,60,+G('m',0));
+const pad=n=>String(n).padStart(2,'0');
+$('tk').innerHTML=[...Array(12).keys()].map(i=>`<line x1="100" y1="${i%3?14:10}" x2="100" y2="22" stroke="#5b6fa8" stroke-width="${i%3?1.5:3}" stroke-linecap="round" transform="rotate(${i*30} 100 100)"/>`).join('');
+const big=()=>{const h=val(wh),m=val(wm);$('big').textContent=pad(h)+':'+pad(m);$('hh').setAttribute('transform',`rotate(${(h%12)*30+m/2} 100 100)`);$('mh').setAttribute('transform',`rotate(${m*6} 100 100)`);const day=h>=5&&h<18;document.body.classList.toggle('day',day);$('cel').innerHTML=day?'<circle r="8" fill="#ffb84d"/>'+[...Array(8).keys()].map(i=>`<line y1="-12" y2="-17" stroke="#ffb84d" stroke-width="2.5" stroke-linecap="round" transform="rotate(${i*45})"/>`).join(''):'<path d="M0 -10a10 10 0 1 0 6 17a8 8 0 1 1-6-17z" fill="#8d9fe0"/>'};big();
+[wh,wm].forEach(w=>w.addEventListener('scroll',()=>{big();clearTimeout(w.t);w.t=setTimeout(()=>{w.scrollTop=(4*w.n+val(w))*44},150)}));
+/* days */
+const dn=[['ش',6],['ی',0],['د',1],['س',2],['چ',3],['پ',4],['ج',5]];let days=JSON.parse(G('days','[0,1,2,3,4,5,6]')),rep=G('rep','0')=='1';
+function drawDays(){$('days').style.display=rep?'flex':'none';$('rep').classList.toggle('on',rep);$('days').innerHTML=dn.map(([l,i])=>`<span data-i="${i}" class="${days.includes(i)?'on':''}">${l}</span>`).join('');
+[...$('days').children].forEach(s=>s.onclick=()=>{const i=+s.dataset.i;days=days.includes(i)?days.filter(x=>x!=i):[...days,i];S('days',JSON.stringify(days));drawDays();if(on)syncAlarm()})}
+$('rep').onclick=()=>{rep=!rep;S('rep',rep?1:0);drawDays();if(on)syncAlarm()};drawDays();
+/* icons */
+$('logo').innerHTML=`<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#14204a"/><polygon points="25,24 9,15 9,41 25,32" fill="#ffc86b"/><ellipse cx="9" cy="28" rx="2.6" ry="13" fill="#0b1230" stroke="#ffc86b" stroke-width="1.6"/><rect x="22" y="22" width="8" height="12" rx="2.5" fill="#ff9a6b"/><polygon points="75,24 91,15 91,41 75,32" fill="#ffc86b"/><ellipse cx="91" cy="28" rx="2.6" ry="13" fill="#0b1230" stroke="#ffc86b" stroke-width="1.6"/><rect x="70" y="22" width="8" height="12" rx="2.5" fill="#ff9a6b"/><g transform="translate(50 52) scale(.88)"><rect x="-22" y="-37" width="44" height="74" rx="7" fill="#7be7ff"/><rect x="-19" y="-30" width="38" height="64" rx="5" fill="#eaf7ff"/><rect x="-11" y="-29" width="22" height="10" rx="5" fill="#fff" stroke="#7be7ff" stroke-width=".8"/><ellipse cx="-14" cy="-6" rx="3" ry="8" fill="#ffd2ad"/><ellipse cx="14" cy="-6" rx="3" ry="8" fill="#ffd2ad"/><rect x="-12" y="-16" width="24" height="48" rx="8" fill="#3d7bff"/><rect x="-12" y="-4" width="24" height="4" fill="#fff" opacity=".3"/><circle cx="0" cy="-23" r="6.5" fill="#ffd2ad"/><path d="M-6.5 -23a6.5 6.5 0 0 1 13 0z" fill="#3a2a22"/></g><g><g transform="rotate(60 50 52)"><ellipse cx="50" cy="31" rx="5.5" ry="15" fill="#9fefff"/></g><g transform="rotate(180 50 52)"><ellipse cx="50" cy="31" rx="5.5" ry="15" fill="#9fefff"/></g><g transform="rotate(300 50 52)"><ellipse cx="50" cy="31" rx="5.5" ry="15" fill="#9fefff"/></g><circle cx="50" cy="52" r="7" fill="#9fefff" stroke="#14204a" stroke-width="1.5"/><circle cx="50" cy="52" r="2.5" fill="#14204a"/></g></svg>`;
+/* native */
+let _np=null;const NP=()=>{if(_np!==null)return _np||null;try{const C=window.Capacitor;if(C&&C.isNativePlatform&&C.isNativePlatform()){_np=(C.Plugins&&C.Plugins.Night)||C.registerPlugin('Night');return _np}}catch(e){}_np=false;return null};
+const call=(m,a)=>{const p=NP();return p?p[m](a||{}):Promise.reject('web')};
+/* vibration */
+const pats={heart:[90,110,90,700],soft:[200,400],wave:[100,100,200,100,300,100,200,100,100,500],strong:[600,200]};
+function raw(p){const n=NP();if(n){n.pattern({pattern:[0,...p]}).catch(e=>{$('st').textContent='خطای ویبره: '+(e&&e.message||e)});return true}return navigator.vibrate?navigator.vibrate(p):false}
+function vib(sec,type){let p=[],t=0,b=pats[type];while(t<sec*1000){for(const x of b){p.push(x);t+=x}}return raw(p)}
+const stopV=()=>{const n=NP();n?n.cancel().catch(()=>{}):navigator.vibrate&&navigator.vibrate(0)};
+const noVib=()=>{$('st').textContent='ویبره در این مرورگر پشتیبانی نمی‌شود؛ در نسخه‌ی APK کار می‌کند.'};
+$('tv').onclick=()=>{if(!vib(5,$('vt').value))noVib();else $('st').textContent='ویبره‌ی ۵ ثانیه‌ای فرستاده شد. اگر حس نکردید «تنظیمات ویبره گوشی» را بزنید.'};
+$('sim').onclick=()=>{const sec=+$('vd').value;if(!vib(sec,$('vt').value))noVib();else $('st').textContent='خروپف شبیه‌سازی شد — ویبره 💓'};
+$('vset').onclick=()=>call('settings').catch(()=>{$('st').textContent='این دکمه فقط در نسخه‌ی APK کار می‌کند.'});
+/* snore monitor (duty-cycled) */
+const insec='این صفحه از «فایل گوشی» باز شده و کروم آن را ناامن می‌داند؛ در این حالت هیچ دکمه‌ای نمی‌تواند مجوز میکروفون بگیرد. صفحه باید با آدرس https یا localhost باز شود.';
+let ctx,an,stream,tick,pmT,buf,run=false,bursts=[],inB=null,vibUntil=0,winEnd=0;
+const aw=()=>{if(NP())return;call('awake',{on:run||on}).catch(()=>{})};if(NP())$('dimrow').style.display='none';
+const dimOn=()=>$('dimsw').classList.contains('on');
+$('dimsw').onclick=()=>{$('dimsw').classList.toggle('on');if(run)call('dim',{on:dimOn()}).catch(()=>{})};
+$('mic').onclick=async()=>{if(!navigator.mediaDevices||!isSecureContext){$('st').textContent=insec;return}
+try{const t=await navigator.mediaDevices.getUserMedia({audio:true});t.getTracks().forEach(x=>x.stop());$('st').textContent='✅ مجوز میکروفون داده شد. حالا «شروع» را بزنید.'}catch(e){$('st').textContent='مجوز داده نشد. در تنظیمات گوشی برای برنامه، میکروفون را مجاز کنید.'}};
+if(!isSecureContext)$('st').textContent=insec;
+async function openMic(){stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false}});ctx=new (window.AudioContext||window.webkitAudioContext)();an=ctx.createAnalyser();an.fftSize=1024;ctx.createMediaStreamSource(stream).connect(an);buf=new Uint8Array(an.frequencyBinCount)}
+function closeMic(){clearInterval(tick);stream&&stream.getTracks().forEach(t=>t.stop());ctx&&ctx.close();ctx=null;stream=null;$('lv').style.width=0}
+function hit(){const sec=+$('vd').value;if(!vib(sec,$('vt').value))noVib();vibUntil=Date.now()+sec*1000+8000;closeMic();$('st').textContent='خروپف شنیده شد — ویبره 💓';clearTimeout(pmT);pmT=setTimeout(cycle,sec*1000+8000)}
+function rest(){closeMic();const m=$('pm').value,g={m30:15,m1:45,m2:105}[m]||1;$('st').textContent='استراحت میکروفون برای صرفه‌جویی باتری 💤';clearTimeout(pmT);pmT=setTimeout(cycle,g*1000)}
+function sample(){if(!ctx)return;an.getByteFrequencyData(buf);const bw=ctx.sampleRate/an.fftSize,a=Math.max(1,Math.round(80/bw)),b=Math.round(900/bw);let s=0;for(let i=a;i<b;i++)s+=buf[i];const l=s/(b-a)/255;$('lv').style.width=Math.min(100,l*200)+'%';
+const thr=.34-$('sens').value*.025,now=Date.now();
+if(l>thr){if(!inB)inB=now}else if(inB){const d=now-inB;inB=null;if(d>250&&d<3000)bursts.push(now)}
+bursts=bursts.filter(t=>now-t<15000);
+if(bursts.length>=2){bursts=[];hit()}else if(now>winEnd)rest()}
+async function cycle(){if(!run)return;if(Date.now()<vibUntil){pmT=setTimeout(cycle,vibUntil-Date.now()+300);return}
+try{await openMic()}catch(e){$('st').textContent='دسترسی میکروفون بسته است. در تنظیمات گوشی برای برنامه، میکروفون را مجاز کنید.';stopAll();return}
+bursts=[];inB=null;const m=$('pm').value;winEnd=m=='cont'?Infinity:Date.now()+15000;$('st').textContent='در حال گوش دادن… 🌙';tick=setInterval(sample,100)}
+function stopAll(){if(NP())call('monitorStop').catch(()=>{});run=false;clearTimeout(pmT);closeMic();stopV();aw();call('dim',{on:false}).catch(()=>{})}
+$('go').onclick=async()=>{if(run)return;const nn=NP();if(nn){try{await nn.monitorStart({sens:+$('sens').value,rest:{cont:0,m30:15,m1:45,m2:105}[$('pm').value],vsec:+$('vd').value,vtype:$('vt').value});run=true;$('st').textContent='پایش فعال است؛ با خاموش شدن صفحه هم ادامه می‌دهد 🌙'}catch(e){$('st').textContent='مجوز میکروفون یا اعلان داده نشد. در تنظیمات گوشی برای برنامه مجاز کنید.'}return}if(!navigator.mediaDevices||!isSecureContext){$('st').textContent=insec;return}run=true;aw();if(dimOn())call('dim',{on:true}).catch(()=>{});cycle()};
+$('stop').onclick=()=>{stopAll();$('st').textContent='غیرفعال.'};
+if(NP()){NP().addListener('monitor',e=>{if(e.type=='level')$('lv').style.width=Math.min(100,e.level*100)+'%';else if(e.type=='listen')$('st').textContent='در حال گوش دادن… 🌙';else if(e.type=='rest'){$('lv').style.width=0;$('st').textContent='استراحت میکروفون برای صرفه‌جویی باتری 💤'}else if(e.type=='hit')$('st').textContent='خروپف شنیده شد — ویبره 💓';else if(e.type=='err')$('st').textContent='خطا: '+(e.text||'');else if(e.type=='stopped'){run=false;$('lv').style.width=0}})}
+for(let i=0;i<12;i++){const d=document.createElement('i');d.className='ff';d.style.cssText=`left:${Math.random()*100}%;top:${50+Math.random()*45}%;animation-delay:${-Math.random()*9}s;animation-duration:${7+Math.random()*7}s`;document.body.appendChild(d)}
+/* tunes */
+const N={C:262,D:294,E:330,F:349,G:392,A:440,B:494,c:523,d:587,e:659,g:784};
+const tunes={'لالایی ماه':'EGcGEG DFAFDF','زنگ کریستال':'ecgc ecgc','پرنده صبح':'gegeg cgcgc','جعبه موسیقی':'CEGcGEC DFAdAFD'};
+let custom=JSON.parse(G('custom','{}'));
+function fill(){$('tune').innerHTML='';[...Object.keys(tunes),...Object.keys(custom)].forEach(k=>{const o=document.createElement('option');o.textContent=k;$('tune').appendChild(o)});$('tune').value=G('tn',Object.keys(tunes)[0])}fill();
+$('tune').onchange=()=>{S('tn',$('tune').value);if(on)syncAlarm()};
+let ac,stopT,au;
+function play(){halt();const k=$('tune').value;if(custom[k]){au=new Audio(custom[k]);au.loop=true;au.play();return}
+ac=new (window.AudioContext||window.webkitAudioContext)();const seq=tunes[k].replace(/ /g,'').split('');
+const run=()=>{const t0=ac.currentTime;seq.forEach((n,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=N[n];g.gain.setValueAtTime(.0001,t0+i*.4);g.gain.exponentialRampToValueAtTime(.4,t0+i*.4+.05);g.gain.exponentialRampToValueAtTime(.0001,t0+i*.4+.55);o.connect(g).connect(ac.destination);o.start(t0+i*.4);o.stop(t0+i*.4+.6)});stopT=setTimeout(run,seq.length*400+400)};run()}
+function halt(){clearTimeout(stopT);ac&&ac.close();ac=null;au&&au.pause();au=null}
+let pv=false;$('pre').onclick=()=>{pv=!pv;pv?play():halt();$('pre').textContent=pv?'توقف':'پیش‌شنیدن'};
+$('add').onclick=()=>$('file').click();
+$('file').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{custom[f.name]=r.result;S('custom',JSON.stringify(custom));fill();$('tune').value=f.name;S('tn',f.name);if(on)syncAlarm()};r.readAsDataURL(f)};
+/* alarm */
+let on=G('on','0')=='1',fired='',A={h:+G('h',7),m:+G('m',0)};
+function nextT(){const n=new Date();for(let i=0;i<8;i++){const d=new Date(n);d.setDate(n.getDate()+i);d.setHours(A.h,A.m,0,0);if(d>n&&(!rep||days.includes(d.getDay())))return d}}
+function ui(){const r=$('rem');$('alb').textContent=on?'✖ لغو زنگ':'✔ کوک و تایید';$('alb').className='btn'+(on?' g':'');
+if(!on){r.style.display='none';return}const t=nextT();if(!t){r.style.display='block';r.textContent='روزی انتخاب نشده';return}
+const m=Math.round((t-new Date())/60000),h=Math.floor(m/60);r.style.display='block';
+r.innerHTML=`⏰ زنگ روی <b dir="ltr">${String(A.h).padStart(2,'0')}:${String(A.m).padStart(2,'0')}</b> کوک شد<br>${h?fa(h,1)+' ساعت و ':''}${fa(m%60,1)} دقیقه دیگر بیدار می‌شوید 🌙`+(rep?'<br><small>تکرار: روزهای انتخاب‌شده</small>':'<br><small>فقط یک‌بار</small>')}
+$('alb').onclick=()=>{on=!on;A={h:val(wh),m:val(wm)};S('on',on?1:0);S('h',A.h);S('m',A.m);if(on)syncAlarm();else call('alarmCancel').catch(()=>{});aw();ui()};ui();
+setInterval(()=>{if(!on)return;ui();if(NP())return;const d=new Date(),k=d.toDateString()+d.getHours()+':'+d.getMinutes();
+if(d.getHours()==A.h&&d.getMinutes()==A.m&&fired!=k&&(!rep||days.includes(d.getDay()))){fired=k;$('ring').style.display='flex';play();raw([500,300,500,300,500,300,500,300,500,300,500,300,500])}},1000);
+$('dis').onclick=()=>{$('ring').style.display='none';halt();stopV();call('alarmStop').catch(()=>{});if(!rep){on=false;S('on',0)}aw();ui()};
+/* sheep game */
+let graf;
+$('by').onclick=()=>{$('game').style.display='flex';const cv=$('cv'),x=cv.getContext('2d'),W=cv.width=Math.min(innerWidth-24,460),H=cv.height=300,fx=W/2,gy=H-70;let sx=-40,n=0,cnt=false;
+const sheep=(px,py)=>{x.fillStyle='#fff';[[0,0,15],[-11,-4,10],[11,-4,10],[0,-10,10]].forEach(([a,b,r])=>{x.beginPath();x.arc(px+a,py+b,r,0,7);x.fill()});x.fillStyle='#2b2b3a';x.beginPath();x.arc(px+19,py-2,7,0,7);x.fill();x.fillRect(px-9,py+10,4,14);x.fillRect(px+6,py+10,4,14)};
+const f=()=>{const g=x.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0b1030');g.addColorStop(1,'#3a2a8a');x.fillStyle=g;x.fillRect(0,0,W,H);x.fillStyle='#ffe9a2';x.beginPath();x.arc(W-50,45,24,0,7);x.fill();x.fillStyle='#fff8';for(let i=0;i<20;i++)x.fillRect((i*83)%W,(i*47)%120,2,2);
+x.fillStyle='#1d5a3a';x.fillRect(0,gy+24,W,H);x.fillStyle='#9a6a3a';for(const o of[-16,0,16])x.fillRect(fx+o-3,gy-6,6,34);x.fillRect(fx-22,gy+2,44,5);x.fillRect(fx-22,gy+14,44,5);
+sx+=2.3;const p=Math.min(1,Math.max(0,(sx-(fx-70))/140)),j=(sx>fx-70&&sx<fx+70)?Math.sin(p*Math.PI)*62:0;sheep(sx,gy-j);
+if(sx>fx+40&&!cnt){cnt=true;n++;$('cnt').textContent='گوسفند شماره '+fa(n,1)+' 🐑'}if(sx>W+40){sx=-40;cnt=false}
+graf=requestAnimationFrame(f)};$('cnt').textContent='گوسفندها را بشمار… 😴';f()};
+$('gc').onclick=()=>{cancelAnimationFrame(graf);$('game').style.display='none'};
+if(on)aw();
+function syncAlarm(){if(!NP())return;const k=$('tune').value,f=custom[k]?[]:(tunes[k]||'').replace(/ /g,'').split('').map(x=>N[x]);call('alarmSet',{h:A.h,m:A.m,rep,days:days.join(''),tune:f.join(','),data:custom[k]||''}).catch(e=>{$('rem').textContent='خطای زنگ: '+(e&&e.message||e)})}
+async function chk(){if(!NP())return;try{const r=await call('alarmRinging');if(r.ringing)$('ring').style.display='flex';if(!r.on&&on&&!rep){on=false;S('on',0);ui()}}catch(e){}}
+chk();document.addEventListener('visibilitychange',()=>{if(!document.hidden)chk()});
+</script></body></html>
